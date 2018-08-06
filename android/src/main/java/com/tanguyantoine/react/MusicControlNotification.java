@@ -36,7 +36,7 @@ public class MusicControlNotification {
 
         // Optional custom icon with fallback to the play icon
         smallIcon = r.getIdentifier("music_control_icon", "drawable", packageName);
-        if(smallIcon == 0) smallIcon = r.getIdentifier("pause", "drawable", packageName);
+        if(smallIcon == 0) smallIcon = r.getIdentifier("beeklogo", "drawable", packageName);
     }
 
     public synchronized void setCustomNotificationIcon(String resourceName) {
