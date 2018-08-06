@@ -131,7 +131,8 @@ public class MusicControlModule extends ReactContextBaseJavaModule implements Co
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             createChannel(context);
         }
-        nb = new NotificationCompat.Builder(context, CHANNEL_ID);
+
+        nb = new NotificationCompat.Builder(context);
         nb.setStyle(new MediaStyle().setMediaSession(session.getSessionToken()));
 
         state = pb.build();
