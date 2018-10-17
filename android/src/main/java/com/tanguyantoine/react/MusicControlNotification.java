@@ -8,6 +8,7 @@ import android.os.IBinder;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.media.session.PlaybackStateCompat;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.media.app.NotificationCompat.MediaStyle;
 import android.view.KeyEvent;
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReadableMap;
@@ -93,6 +94,11 @@ public class MusicControlNotification {
 
         builder.setSmallIcon(customIcon != 0 ? customIcon : smallIcon);
 
+        // Show actions in compact view of notificationShowActionsInCompactView
+        builder.setShowWhen(false); // Hide time of notification
+        builder.setStyle(new MediaStyle()
+            .setShowActionsInCompactView(new int[]{0, 1, 2})); // Show first three via addAction() hooked actions
+            
         // Open the app when the notification is clicked
         String packageName = context.getPackageName();
         Intent openApp = context.getPackageManager().getLaunchIntentForPackage(packageName);
