@@ -75,11 +75,11 @@ public class MusicControlNotification {
     public synchronized void show(NotificationCompat.Builder builder, boolean isPlaying) {
         // Add the buttons
         builder.mActions.clear();
+        if(stop != null) builder.addAction(stop);
         if(previous != null) builder.addAction(previous);
         if(skipBackward != null) builder.addAction(skipBackward);
         if(play != null && !isPlaying) builder.addAction(play);
         if(pause != null && isPlaying) builder.addAction(pause);
-        if(stop != null) builder.addAction(stop);
         if(next != null) builder.addAction(next);
         if(skipForward != null) builder.addAction(skipForward);
 
